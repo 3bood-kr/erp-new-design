@@ -1,9 +1,9 @@
 @use '../mixins/global' as m;
 @use '../utils' as u;
 .off-canvas{
-    position: fixed;
-    right: 0;
-    top: 0;
+    // position: fixed;
+    // right: 0;
+    // top: 0;
     height: 100%;
     color: #fff;
     background-color: var(--c-dark-blue);

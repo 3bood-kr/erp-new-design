@@ -73,6 +73,48 @@
         }
     }
 
+    .stats{
+        font-size: u.rem(8);
+    }
+    .square{
+        display: inline-block;
+        width: u.rem(14);
+        height: u.rem(14);
+        min-width: u.rem(14);
+        min-height: u.rem(14);
+        margin-inline-end: u.rem(5);     
+    } 
+    .stat-lb{
+        color: var(--c-light-blue);
+        .square{
+            background-color:  var(--c-light-blue);
+        }
+    }
+    .stat-pink{
+        color: var(--c-pink);
+        .square{
+            background-color:  var(--c-pink);
+        }
+    }
+    .stat-db{
+        color: var(--c-steel-blue);
+        .square{
+            background-color:  var(--c-steel-blue);
+        }
+    }
+
+    .statistics-chart{
+        width: 100%;
+        height: 100%;
+    }
+
+    #statsChart{
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        height: 100%;
+    }
+
 }
 .personal-info{
         

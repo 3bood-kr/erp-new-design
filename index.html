@@ -73,20 +73,44 @@
                                     </div>                                  
                                     <div class="pt-3 attendace__pink">
                                         <h4>
-                                            حضور
+                                            غياب
                                         </h4>
                                         <p class="mb-1">215 يوم</p>
                                         <span class="progress-bar"></span>
                                     </div>                                  
                                     <div class="pt-3 attendace__dark-blue">
                                         <h4>
-                                            حضور
+                                            إجازات
                                         </h4>
                                         <p class="mb-1">215 يوم</p>
                                         <span class="progress-bar"></span>
-                                    </div>                                  
+                                    </div> 
+                                    <div class="row g-1 w-100 stats mt-2">
+                                        <div class="col-4">
+                                            <div class="d-flex align-items-center stat-lb">
+                                                <span class="square"></span>
+                                                حضور  
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="d-flex align-items-center stat-pink">
+                                                <span class="square"></span>
+                                                غياب  
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="d-flex align-items-center stat-db">
+                                                <span class="square"></span>
+                                                إجازات  
+                                            </div>
+                                        </div>
+                                    </div>                                 
                                 </div>
-                                <div class="col-8"></div>
+                                <div class="col-8">
+                                    <div class="statistics-chart">
+                                        <canvas id="statsChart"></canvas>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -206,7 +230,7 @@
                     <div class="col-4">
                         <div class="white-card my-requests">
                             <h2 class="mb-3">
-                                <img src="./images/personal-info-icon.png" alt="" class="d-inline-block" width="30" height="34">
+                                <img src="./images/my-requests-heading.png" alt="" class="d-inline-block" width="30" height="34">
                                  طلباتي
                                 <span class="underline"></span>
                             </h2>
@@ -313,6 +337,94 @@
         </div>
     </div>
     <script type="module" src="/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.js"></script>
+    <script>
+
+        var canvas = document.getElementById('statsChart');
+        let numbersArray = [];
+
+        var data = {
+        // labels: ["", "", "", "", " ", " ", " ", " ", " ", " "],
+        // datasets: [
+        //     {
+        //         // label: "My First dataset",
+        //         backgroundColor: "rgba(32,164,221,1)",
+        //         hoverBackgroundColor: "rgba(32,164,221,0.9)",
+        //         borderColor: "rgba(32,164,221,1)",
+        //         data: [5,],
+        //     }
+        // ],
+        labels: ['Jan 2023', 'Feb 2023', 'Mar 2023', 'Apr 2023', 'May 2023', 'Jun 2023', 'Jul 2023', 'Aug 2023', 'Seb 2023', 'Oct 2023'],
+    datasets: [{
+        label: 'attendace',
+        backgroundColor: 'rgb(29, 170, 226)',
+        data: [27, 12, 9, 27, 18, 9, 9, 27, 18, 9]
+    }, {
+        label: 'absence',
+        backgroundColor: 'rgb(201, 69, 201)',
+        data: [0, 15, 9, 0, 9, 9, 9, 0, 9, 12]
+    },
+    {
+        label: 'leaves',
+        backgroundColor: 'rgb(63, 95, 129)',
+        data: [0, 0, 6, 0, 0, 6, 9, 0, 0, 6]
+    }]
+    };
+    var option = {
+        legend: {
+            display: false
+        },
+        indexAxis: 'y', // Set the index axis to 'y' for vertical stacking
+        scales:{
+            xAxes: [{
+                    display: true,
+                    stacked: true,
+                    //type: 'logarithmic',
+                    ticks: {
+                        fontSize: 6,
+                        color: 'black'
+                    }
+
+                }],
+            yAxes: [{
+                    display: true,
+                    stacked: true,
+                    //type: 'logarithmic',
+                    ticks: {
+                        min: 0,
+                        max: 30,
+                        stepSize: 3,
+                        callback: function (value, index, values) {
+                            return value;
+                        },
+                    }
+
+                }] 
+        },
+        maintainAspectRatio: false,
+                // scales: {
+        //     yAxes: [{
+        //         ticks: {
+        //             beginAtZero:true,
+        //             max: 100,
+        //             min: 0,
+        //             stepSize: 10,
+        //             // callback: function(value, index, values) {
+        //             //     return value + '%';
+        //             // },
+        //         },
+        //     }]
+        // }
+
+    };
+
+    var myBarChart = Chart.Bar(canvas, {
+        data: data,
+        options: option,
+        type: 'bar'
+    });
+
+    </script>
 </body>
 
 </html>
