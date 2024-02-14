@@ -1,0 +1,29 @@
+@use  '../mixins/global' as m;
+header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-inline-start: 82px;
+    padding-block: 34px 18px;
+    background: linear-gradient(180deg, rgba(0, 0, 51, 0.612) 0%, rgba(237, 240, 245, 0) 55%); 
+
+    .customize-btn{
+        @include m.border-solid($color: var(--c-dark-blue), $borderRadius: 4px);
+        padding-inline-end: 23px;
+    }
+
+    .search{
+        @include m.flex-center-center();
+        @include m.border-solid($color: var(--c-dark-blue), $borderRadius: 4px);
+        height: 30px;
+        input{
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: black;
+            padding: 10px;
+        }
+    }
+    
+}

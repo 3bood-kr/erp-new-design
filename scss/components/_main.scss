@@ -1,0 +1,7 @@
+@use '../mixins/global' as m;
+@use '../utils' as u;
+
+main{
+    margin-inline: u.rem(26);
+    margin-top: 15px;
+}

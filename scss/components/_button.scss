@@ -1,0 +1,12 @@
+@use '../utils' as u;
+@use '../mixins/global' as m;
+
+
+
+.main-button{
+    display: block;
+    background-color: var(--c-light-blue);
+    padding-inline: u.rem(17);
+    color: #fff;
+    border-radius: 5px;
+}

@@ -1,0 +1,100 @@
+@use 'utils' as u;
+@use 'mixins/global' as m;
+
+:root{
+    --c-light-grey: #EDF0F5;
+    --c-dark-blue: #1D2244;
+    --c-steel-blue: #3F5F81;
+    --c-light-blue: #1DAAE2;
+    --c-pink: #C945C9;
+
+}
+
+@font-face {
+    font-family: Droid Arabic Kufi;
+    src: url('../fonts/Droid.Arabic.Kufi_DownloadSoftware.iR_.ttf') format('truetype');
+
+}
+
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #EDF0F5 !important;
+    // line-height: 1.5;
+
+    .main{
+        height: 100vh;
+    }
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    margin: 0 !important;
+}
+
+h2{
+    font-size: u.rem(18) !important;
+}
+h3{
+    font-size: u.rem(14) !important;
+}
+h4{
+    font-size: u.rem(11) !important;
+
+}
+label{
+    font-size: u.rem(16);
+}
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.underline{
+    margin-block-start: u.rem(10);
+    display: block;
+    position: relative;
+    width: 80%;
+    height: 2px;
+    background-color: var(--c-pink);
+    &::before{
+        @include m.absolute-positioned($top: -4px, $left: -4px);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--c-pink);
+    }
+
+    &::after{
+        @include m.absolute-positioned($top: -4px, $right: -4px);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--c-pink);
+    }
+    
+}
+
+
+
+

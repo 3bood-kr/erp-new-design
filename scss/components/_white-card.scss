@@ -1,0 +1,98 @@
+@use '../utils' as u;
+@use '../mixins/global' as m;
+.white-card{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: u.rem(15);
+
+    h2, h3{
+        display: inline-block;
+    }
+
+    .main-button{
+        font-size: u.rem(12);
+    }
+}
+
+.attendace{
+    p{
+        font-size: 12px;
+    }
+
+    .progress-bar{
+        display: block;
+        position: relative;
+        width: 100%;
+        height: u.rem(6);
+        border-radius: 5px;
+        &::after{
+            @include m.absolute-positioned($top: 0, $right: 0);
+            width: 50%;
+            height: 100%;
+            border-radius: 5px;
+        }
+    }
+
+    &__blue{
+        h4{
+            color: var(--c-light-blue);
+        }
+
+        .progress-bar{
+            background-color: #cfe6f0;
+            &::after{
+                background-color: var(--c-light-blue);
+            }
+        }
+
+        
+    }
+
+    &__pink{
+        h4{
+            color: var(--c-pink);
+        }
+        .progress-bar{
+            background-color: #e39ee3;
+            &::after{
+                background-color: var(--c-pink);
+            }
+        }
+    }
+
+    &__dark-blue{
+        h4{
+            color: var(--c-steel-blue);
+        }
+        .progress-bar{
+            background-color: #acbac9
+            ;
+            &::after{
+                background-color: var(--c-steel-blue);
+            }
+        }
+    }
+
+}
+.personal-info{
+        
+    label{
+        font-size: u.rem(14);
+        display: block;
+    }
+
+    input{
+        height: u.rem(26);
+        font-size: u.rem(12);
+        @include m.border-solid($color: var(--c-light-blue), $borderRadius: 5px);
+        outline: none;
+        width: 100%;
+        padding: u.rem(8);
+    }
+
+    .main-button{
+        margin-inline-start: auto;
+    }
+   
+
+}
