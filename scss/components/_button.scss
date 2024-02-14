@@ -4,9 +4,15 @@
 
 
 .main-button{
-    display: block;
     background-color: var(--c-light-blue);
-    padding-inline: u.rem(17);
+    padding-inline: u.rem(20);
     color: #fff;
     border-radius: 5px;
 }
+
+a.main-button{
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+}
+

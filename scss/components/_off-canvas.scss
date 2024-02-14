@@ -1,6 +1,9 @@
 @use '../mixins/global' as m;
 @use '../utils' as u;
 .off-canvas{
+    position: fixed;
+    right: 0;
+    top: 0;
     height: 100%;
     color: #fff;
     background-color: var(--c-dark-blue);
@@ -15,6 +18,9 @@
             list-style: none;
             padding-block: u.rem(20) u.rem(10);
             border-bottom: 1.5px solid #fff;
+            &:last-of-type{
+                border-bottom: none;
+            }
             
             a{
                 font-size: u.rem(16);

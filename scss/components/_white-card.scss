@@ -93,6 +93,83 @@
     .main-button{
         margin-inline-start: auto;
     }
-   
 
+}
+
+.leave-balance{
+    .yearly, .sick{
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img{
+            margin-bottom: u.rem(22);
+        }
+        p{
+            font-size: u.rem(14);
+        }
+        span{
+            color: var(--c-light-blue);
+            font-size: u.rem(12);
+        }
+    }
+
+    .vertical-line{
+        width: 1px;
+        height: 100%;
+        background-color: var(--c-light-blue);
+
+    }
+
+    a{
+        margin-inline-start: auto;
+    }
+}
+
+.salaries{
+    &__current{
+        font-size: u.rem(24);
+    }
+    &__info{
+        font-size: u.rem(12);
+        text-align: center;
+    }
+}
+
+.my-requests{
+    input{
+        width: 50%;
+        height: u.rem(31);
+        @include m.border-solid($borderRadius: 4px);
+    }
+
+    .main-button{
+        height: u.rem(31);
+        padding: u.rem(10);
+    }
+
+    ul{
+        margin: 0;
+        padding: 0;
+        margin-block-start: u.rem(26);
+        li{
+            list-style: none;
+            border-bottom: 1px solid var(--c-steel-blue);
+            &:last-of-type{
+                border-bottom: none;
+            }
+
+            .body{
+                font-size: u.rem(16);
+
+                span{
+                    color: #156585;
+                    font-size: u.rem(14);
+                }
+            }
+        }
+        
+    }
 }
