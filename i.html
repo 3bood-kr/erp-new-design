@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+</head>
+<body>
+    <div class="row w-100 g-0">
+        <div class="col-2">
+            <div class="off-canvas">
+                <h2 class="ms-2">
+                    <div class="d-flex align-items-center">
+                        <img src="./images/options-icon.png" class="mx-2" alt="" width="23" height="23">
+                        قائمة الخيارات
+                    </div>
+                    <span class="underline"></span>
+                </h2>
+                <ul>
+                    <li><a href="">الصفحة الرئيسية</a></li>
+                    <li><a href="">المعلومات الشخصية</a></li>
+                    <li><a href="">الإجازات والمغادرات</a></li>
+                    <li><a href="">الحضور</a></li>
+                    <li><a href="">التأمين</a></li>
+                    <li><a href="">الرواتب</a></li>
+                    <li><a href="">إدارة فترات العمل</a></li>
+                    <li><a href="">معلومات التواصل للموظفين</a></li>
+                    <li><a href="">الملف الشخصي</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-10 main">
+            <header>
+                <div class="search">
+                    <img src="./images/search.png" class="mx-1" alt="" width="18" height="18">
+                    <input type="text" placeholder="ابحث هنا">
+                </div>
+                <button class="d-flex customize-btn">
+                    <img src="./images/customize-icon.png" class="mx-2" alt="" width="18" height="25">
+                    تخصيص هذه الصفحة
+                </button>
+                <button>
+                    <img src="./images/bell.png" alt="" width="32" height="32">
+                </button>
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" fill="none"
+                        xmlns:v="https://vecta.io/nano">
+                        <path
+                            d="M11.731 16.01a2 2 0 0 1-1.731.998 2 2 0 0 1-1.731-.998L.738 3a2 2 0 0 1 0-2 2 2 0 0 1 1.731-1h15.062a2 2 0 0 1 1.731 1 2 2 0 0 1 0 2l-7.531 13.01z"
+                            fill="#1d2244" />
+                    </svg>
+                </button>
+            </header>
+
+            <main class="leaves_page d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center w-100 pb-3">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-dashboard" type="button" role="tab" aria-controls="pills-home"
+                                aria-selected="false">لوحة التحكم</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-vacations" type="button" role="tab" aria-controls="pills-profile"
+                                aria-selected="true">الإجازات</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                                aria-selected="false">المغادرات</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                                aria-selected="false">الاإجازات الرسمية</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                                aria-selected="false">طلباتي</button>
+                        </li>
+                    </ul>
+                    <a href="#" class="main-button d-flex align-items-center justify-content-center gap-1">
+                        <img src="./images/add.png"  alt="" width="18" height="18">
+                        إاضافة طلب جديد
+                    </a>
+                </div>
+                <div class="tab-content flex-1 h-100 pb-3 overflow-hidden" id="pills-tabContent">
+                    <div class="tab-pane fade show active my-leaves h-100 overflow-hidden" id="pills-vacations" role="tabpanel"
+                        aria-labelledby="pills-profile-tab" tabindex="0">
+                        <div class="row w-100 h-100 pb-2">
+                            <div class="col-6 h-100 pb-2">
+                                <div class="row g-0 p-0 m-0 h-100">
+                                    <div class="col-12 p-0 m-0 h-100">
+                                        <div class="d-flex justify-content-between ps-1">
+                                            <h2>
+                                                إجازاتي
+                                                <span class="underline"></span>
+                                            </h2>
+                                            <div>
+                                                <select name="" id="">
+                                                    <option value="">نوع الإجازة</option>
+                                                </select>
+                                                <select name="" id="">
+                                                    <option value="">الحالة</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <ul class="white-card h-100 p-3">
+                                            <li class="py-3">
+                                                <div class="head d-flex align-items-center justify-content-between mb-2">
+                                                    <h2>
+                                                        <img src="./images/my-requests.png" alt="" class="d-inline-block" width="34"
+                                                            height="26">
+                                                        إجازة
+                                                    </h2>
+                                                    <img src="./images/info.png" alt="" width="17" height="17">
+                                                </div>
+                                                <div class="row g-2 w-100">
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="py-3">
+                                                <div class="head d-flex align-items-center justify-content-between mb-2">
+                                                    <h2>
+                                                        <img src="./images/my-requests.png" alt="" class="d-inline-block" width="34"
+                                                            height="26">
+                                                        إجازة
+                                                    </h2>
+                                                    <img src="./images/info.png" alt="" width="17" height="17">
+                                                </div>
+                                                <div class="row g-2 w-100">
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="py-3">
+                                                <div class="head d-flex align-items-center justify-content-between mb-2">
+                                                    <h2>
+                                                        <img src="./images/my-requests.png" alt="" class="d-inline-block" width="34"
+                                                            height="26">
+                                                        إجازة
+                                                    </h2>
+                                                    <img src="./images/info.png" alt="" width="17" height="17">
+                                                </div>
+                                                <div class="row g-2 w-100">
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="py-3">
+                                                <div class="head d-flex align-items-center justify-content-between mb-2">
+                                                    <h2>
+                                                        <img src="./images/my-requests.png" alt="" class="d-inline-block" width="34"
+                                                            height="26">
+                                                        إجازة
+                                                    </h2>
+                                                    <img src="./images/info.png" alt="" width="17" height="17">
+                                                </div>
+                                                <div class="row g-2 w-100">
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="py-3">
+                                                <div class="head d-flex align-items-center justify-content-between mb-2">
+                                                    <h2>
+                                                        <img src="./images/my-requests.png" alt="" class="d-inline-block" width="34"
+                                                            height="26">
+                                                        إجازة
+                                                    </h2>
+                                                    <img src="./images/info.png" alt="" width="17" height="17">
+                                                </div>
+                                                <div class="row g-2 w-100">
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="py-3">
+                                                <div class="head d-flex align-items-center justify-content-between mb-2">
+                                                    <h2>
+                                                        <img src="./images/my-requests.png" alt="" class="d-inline-block" width="34"
+                                                            height="26">
+                                                        إجازة
+                                                    </h2>
+                                                    <img src="./images/info.png" alt="" width="17" height="17">
+                                                </div>
+                                                <div class="row g-2 w-100">
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="py-3">
+                                                <div class="head d-flex align-items-center justify-content-between mb-2">
+                                                    <h2>
+                                                        <img src="./images/my-requests.png" alt="" class="d-inline-block" width="34"
+                                                            height="26">
+                                                        إجازة
+                                                    </h2>
+                                                    <img src="./images/info.png" alt="" width="17" height="17">
+                                                </div>
+                                                <div class="row g-2 w-100">
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p>المدة</p>
+                                                        <input type="text" name="" id="" value="5 أيام" readonly />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <h2>
+                                    التقويم
+                                    <span class="underline"></span>
+                                </h2>
+                                <div class="white-card h-100">
+                                    hh <br>
+
+                                    hh <br>
+                                    hh <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
