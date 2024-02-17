@@ -139,6 +139,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        border-color: var(--c-light-blue) !important;
 
         img{
             margin-bottom: u.rem(22);
@@ -245,8 +246,6 @@
     }
 
     .my-leaves{
-        display: flex;
-        justify-content: space-between;
         select{
             min-width: 155px;
             height: 31px;
@@ -254,9 +253,6 @@
             color: var(--c-light-blue);
             @include m.border-solid(1, var(--c-light-blue), 4px);
             font-size: u.rem(17);
-        }
-        &__list{
-            
         }
         ul{
             list-style: none;
@@ -274,6 +270,7 @@
                     font-size: u.rem(14);
                     color: var(--c-steel-blue);
                     padding: u.rem(5);
+                    outline: none;
                 }
                 border-bottom: 1px solid var(--c-steel-blue);
                 &:last-of-type{
@@ -299,5 +296,93 @@
         }
     }
 
+    .calendar{
+        background-color: #fff;
+        border-radius: 5px;
+        overflow: hidden;
+        font-size: u.rem(26);
+        &__blue-side{
+            border-radius: 5px;
+            display:  flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: var(--c-light-blue);
+            color: #fff;
+            h3{
+                font-size: u.rem(16) !important;   
+                text-align: center;    
+            }
+
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                li{               
+                    button{
+                        padding-inline: u.rem(10);
+                        width: 100%;
+                        color: #fff;
+                    }
+                    text-align: center;
+                    &.active{
+                        font-size: u.rem(25);
+                        button{
+                            color: var(--c-calendar-blue);
+                            padding-block: u.rem(14) u.rem(9);
+                            background-color: #fff;
+                        }
+                    }
+
+                    $fontSize : 18px;
+                    $paddinBlock: 13px;
+                    @for $i from 1 through 4 {
+                        $topChild : 5 - $i;
+                        $bottomChild : 5 + $i;
+                        &:nth-child(#{$topChild}) {
+                            button{
+                                font-size: $fontSize;
+                                padding-block: $paddinBlock;
+                            }
+                        }
+                        &:nth-child(#{$bottomChild}) {
+                            button{
+                                font-size: $fontSize;
+                                padding-block: $paddinBlock;
+                            }
+                        }
+                        $fontSize: $fontSize - 5px;
+                        $paddinBlock: $paddinBlock - 3;
+                    }
+                }
+            }
+        }
+        &__white-side{
+            font-size: u.rem(16);
+            color: var(--c-calendar-blue);
+            &__head{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                >div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            &__body{
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                gap: u.rem(5);
+                height: 100%;
+                >button{
+                    color: var(--c-calendar-blue);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            
+        }
+    }
 
 }

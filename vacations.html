@@ -90,10 +90,10 @@
                 </div>
                 <div class="tab-content pt-3 overflow-hidden" id="pills-tabContent"
                     style="height: calc(100vh - 126px);">
-                    <div class="tab-pane fade show active my-leaves h-100" id="pills-vacations" role="tabpanel"
+                    <div class="tab-pane fade show active h-100" id="pills-vacations" role="tabpanel"
                         aria-labelledby="pills-profile-tab" tabindex="0">
                         <div class="row w-100 pb-2 h-100">
-                            <div class="col-6 pb-5 h-100">
+                            <div class="col-6 pb-5 h-100 my-leaves">
                                 <div class="d-flex justify-content-between ps-1">
                                     <h2>
                                         إجازاتي
@@ -339,18 +339,125 @@
                             </div>
                             <div class="col-6 pb-5 h-100">
                                 <h2>
-                                    إجازاتي
+                                    التقويم
                                     <span class="underline"></span>
                                 </h2>
-                                <div class="white-card overflow-hidden overflow-auto p-0 h-100">
+                                <div class="calendar h-100">
+                                    <div class="row g-0 h-100">
+                                        <div class="col-4">
+                                            <div class="calendar__blue-side py-3 h-100">
+                                                <h3 id="calendarDate">
+                                                    2023,,2مايو 2,الأثن
+                                                </h3>
+                                                <ul>
+                                                    <li>
+                                                        <button>2027 مايو </button>
+                                                    </li>
+                                                    <li>
+                                                        <button>2026 مايو </button>
+                                                    </li>
+                                                    <li>
+                                                        <button>2025 مايو </button>
+                                                    </li>
+                                                    <li>
+                                                        <button>2024 مايو </button>
+                                                    </li>
+                                                    <li class="active">
+                                                        <button>2023 مايو</button>
+                                                    </li>
+                                                    <li>
+                                                        <button>2022 مايو </button>
+                                                    </li>
+                                                    <li>
+                                                        <button>2021 مايو </button>
+                                                    </li>
+                                                    <li>
+                                                        <button>2020 مايو </button>
+                                                    </li>
+                                                    <li>
+                                                        <button>2019 مايو </button>
+                                                    </li>
+                                                </ul>
+                                                <div class="bottom">                                 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="calendar__white-side border-0 p-3 h-100">
+                                                <div class="calendar__white-side__head">                                            
+                                                    <div>أحد</div>
+                                                    <div>اثنين</div>
+                                                    <div>ثلاثاء</div>
+                                                    <div>اربعاء</div>
+                                                    <div>خميس</div>
+                                                    <div>جمعة</div>
+                                                    <div>سبت</div>
+                                                </div>
+                                                <div id="calendarDays" class="calendar__white-side__body">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="tab-pane fade overflow-auto h-100" id="pills-dashboard">
+
                     </div>
                 </div>
             </main>
         </div>
     </div>
+    <script>
+        var calendar = document.getElementById('calendarDays');
+        var calendarDate = document.getElementById('calendarDate');
+        const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+        function load(){
+            const dt = new Date();
+            const day = dt.getDate();
+            const month = dt.getMonth();
+            const year = dt.getFullYear();
+            
+            const firstDayOfMonth = new Date(year, month, 1);
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            
+            const dateString = firstDayOfMonth.toLocaleString('en-us', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric',
+            });
+
+            arabicCurrentDateString = dt.toLocaleString('ar-us', {
+                weekday: 'long',
+                year: '2-digit',
+                month: 'long',
+                day: '2-digit',
+            });
+            calendarDate.innerText = arabicCurrentDateString;
+
+
+            const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
+            
+            for(i = 1; i <= paddingDays + daysInMonth; i++){
+                daySquare = document.createElement("button");
+                daySquare.classList.add('day');
+
+                if(i > paddingDays){
+                    daySquare.innerText = i - paddingDays;
+                    daySquare.addEventListener('click', () => console.log('clicked'));
+                }else{
+                    daySquare.setAttribute('disabled', true);
+                }
+                calendar.appendChild(daySquare);
+            }
+        }
+
+        load();
+    </script>
     <script type="module" src="/main.js"></script>
 </body>
 
