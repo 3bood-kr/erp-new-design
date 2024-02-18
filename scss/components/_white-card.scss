@@ -117,14 +117,6 @@
         display: block;
     }
 
-    input{
-        height: u.rem(26);
-        font-size: u.rem(12);
-        @include m.border-solid($color: var(--c-light-blue), $borderRadius: 5px);
-        outline: none;
-        width: 100%;
-        padding: u.rem(8);
-    }
 
     .main-button{
         margin-inline-start: auto;
@@ -176,11 +168,9 @@
 }
 
 .my-requests{
-    input{
-        width: 50%;
-        height: u.rem(31);
-        @include m.border-solid($borderRadius: 4px);
-    }
+    // .search-input{
+    //     width: 50%;
+    // }
 
     .main-button{
         height: u.rem(31);
@@ -327,7 +317,7 @@
                     &.active{
                         font-size: u.rem(25);
                         button{
-                            color: var(--c-calendar-blue);
+                            color: var(--c-light-blue);
                             padding-block: u.rem(14) u.rem(9);
                             background-color: #fff;
                         }

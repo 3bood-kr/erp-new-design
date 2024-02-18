@@ -1,0 +1,19 @@
+@use '../utils' as u;
+@use '../mixins/global' as m;
+
+.search-input{
+    width: 50%;
+    height: u.rem(31);
+    @include m.border-solid($borderRadius: 5px);
+    outline: none;
+    padding: u.rem(5);
+}
+
+.info-input{
+    height: u.rem(26);
+        font-size: u.rem(12);
+        @include m.border-solid($color: var(--c-light-blue), $borderRadius: 5px);
+        outline: none;
+        width: 100%;
+        padding: u.rem(8);
+}

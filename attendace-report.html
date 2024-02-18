@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+</head>
+
+<body>
+    <div class="row w-100 g-0" style="height: 100vh;">
+        <div class="col-2 h-100">
+            <div class="off-canvas">
+                <div class="d-flex align-items-center justify-content-center pb-5">
+                    <a href="/">
+                        <img src="./images/company-logo.png" alt="" style="height: 48px;">
+                    </a>
+                </div>
+                <h2 class="ms-2">
+                    <div class="d-flex align-items-center">
+                        <img src="./images/options-icon.png" class="mx-2" alt="" width="23" height="23">
+                        قائمة الخيارات
+                    </div>
+                    <span class="underline"></span>
+                </h2>
+                <ul>
+                    <li><a href="">الصفحة الرئيسية</a></li>
+                    <li><a href="">المعلومات الشخصية</a></li>
+                    <li><a href="">الإجازات والمغادرات</a></li>
+                    <li><a href="">الحضور</a></li>
+                    <li><a href="">التأمين</a></li>
+                    <li><a href="">الرواتب</a></li>
+                    <li><a href="">إدارة فترات العمل</a></li>
+                    <li><a href="">معلومات التواصل للموظفين</a></li>
+                    <li><a href="">الملف الشخصي</a></li>
+                    <li><a href="">طلبات الاعتراض</a></li>
+                    <li><a href="">الحركات على الراتب</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-10 main h-100 overflow-auto">
+            <header>
+                <div class="search">
+                    <img src="./images/search.png" class="mx-1" alt="" width="18" height="18">
+                    <input type="text" placeholder="ابحث هنا">
+                </div>
+                <button class="d-flex customize-btn">
+                    <img src="./images/customize-icon.png" class="mx-2" alt="" width="18" height="25">
+                    تخصيص هذه الصفحة
+                </button>
+                <button>
+                    <img src="./images/bell.png" alt="" width="32" height="32">
+                </button>
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" fill="none"
+                        xmlns:v="https://vecta.io/nano">
+                        <path
+                            d="M11.731 16.01a2 2 0 0 1-1.731.998 2 2 0 0 1-1.731-.998L.738 3a2 2 0 0 1 0-2 2 2 0 0 1 1.731-1h15.062a2 2 0 0 1 1.731 1 2 2 0 0 1 0 2l-7.531 13.01z"
+                            fill="#1d2244" />
+                    </svg>
+                </button>
+            </header>
+            <main>
+                <div class="row mb-4 w-100">
+                    <div class="col-12 d-flex h-100">
+                        <div class="white-card h-100 w-100">
+                            <h2>
+                                <img src="./images/weekly-attendace.png" alt="" class="d-inline-block" width="30"
+                                        height="34">
+                                الحضور الأسبوعي
+                                <span class="underline"></span>
+                            </h2>
+                            <div class="in-out-chart h-100 w-100 position-relative">
+                                <canvas id="weeklyAttendaceChart" style="max-width: 100%"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4 w-100">
+                    <div class="col-12 d-flex h-100">
+                        <div class="white-card h-100 w-100">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h2>
+                                    <img src="./images/weekly-attendace.png" alt="" class="d-inline-block" width="30"
+                                            height="34">
+                                    تقرير الحضور
+                                    <span class="underline"></span>
+                                </h2>
+                                <div>
+                                    lll
+                                </div>
+                            </div>
+                            <div class="in-out-chart h-100 w-100 position-relative">
+                                <canvas id="weeklyAttendaceChart" style="max-width: 100%"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var inout = document.getElementById('weeklyAttendaceChart');
+        var horizontalBarChart = new Chart(inout, {
+            type: 'bar',
+            data: {
+                labels: ["أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"],
+                datasets: [{
+                    data: [
+                        [9, 17],
+                        [9, 17],
+                        [9, 17],
+                        [9, 17],
+                    ],
+                    backgroundColor: ["#1995C7", "#1995C7", "#1995C7", "#1995C7"],
+                }]
+            },
+            options: {
+                rtl: true,
+                aspectRatio: 1 / 1,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                },
+                scales: {
+                    y: {
+                        position: 'right',
+                        ticks: {
+                            color: 'black',
+                        }
+                    },
+                    x: {
+                        min: 0,
+                        max: 20,
+                        ticks: {
+                            color: 'black',
+                            stepSize: 1,
+                            callback: (val, index) => {
+                                let hour = val ;
+                                let hourLabel = '';
+                                return `${hour}:00`;
+                            }
+                        },                 
+                        reverse: true // Reverse the x-axis to start from right to left
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

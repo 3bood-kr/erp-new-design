@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         vacations: resolve(__dirname, 'vacations.html'),
+        attendace: resolve(__dirname, 'attendace-report.html'),
       },
     },
   },
