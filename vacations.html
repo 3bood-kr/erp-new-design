@@ -12,6 +12,11 @@
     <div class="row w-100 g-0">
         <div class="col-2">
             <div class="off-canvas">
+                <div class="d-flex align-items-center justify-content-center pb-5">
+                    <a href="/">
+                        <img src="./images/company-logo.png" alt="" style="height: 48px;">
+                    </a>
+                </div>
                 <h2 class="ms-2">
                     <div class="d-flex align-items-center">
                         <img src="./images/options-icon.png" class="mx-2" alt="" width="23" height="23">
@@ -29,6 +34,8 @@
                     <li><a href="">إدارة فترات العمل</a></li>
                     <li><a href="">معلومات التواصل للموظفين</a></li>
                     <li><a href="">الملف الشخصي</a></li>
+                    <li><a href="">طلبات الاعتراض</a></li>
+                    <li><a href="">الحركات على الراتب</a></li>
                 </ul>
             </div>
         </div>
@@ -56,30 +63,29 @@
             </header>
             <main class="leaves_page">
                 <div class="d-flex justify-content-between align-items-center w-100">
-                    <ul class="nav nav-pills m-0 p-0" id="pills-tab" role="tablist">
+                    <ul class="nav nav-pills vacations-nav-pills m-0 p-0" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-dashboard" type="button" role="tab" aria-controls="pills-dashboard"
-                                aria-selected="false">لوحة التحكم</button>
+                            <button class="nav-link" id="dashboard-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-dashboard" type="button" role="tab"
+                                aria-controls="pills-dashboard" aria-selected="false">لوحة التحكم</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-vacations" type="button" role="tab" aria-controls="pills-vacations"
-                                aria-selected="true">الإجازات</button>
+                            <button class="nav-link" id="vacations-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-vacations" type="button" role="tab"
+                                aria-controls="pills-vacations" aria-selected="true">الإجازات</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" data-bs-toggle="pill"
-                                data-bs-target="#pills-leaves" type="button" role="tab" aria-controls="pills-leaves"
-                                aria-selected="false">المغادرات</button>
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-leaves" type="button"
+                                role="tab" aria-controls="pills-leaves" aria-selected="false">المغادرات</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
-                                aria-selected="false">الاإجازات الرسمية</button>
+                            <button class="nav-link" id="pills-offical-holidays-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-offical-holidays" type="button" role="tab"
+                                aria-controls="pills-offical-holidays" aria-selected="false">الاإجازات الرسمية</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                            <button class="nav-link active" id="pills-my-requests" data-bs-toggle="pill"
+                                data-bs-target="#pills-my-requests" type="button" role="tab" aria-controls="pills-my-requests"
                                 aria-selected="false">طلباتي</button>
                         </li>
                     </ul>
@@ -90,7 +96,7 @@
                 </div>
                 <div class="tab-content pt-3 overflow-hidden" id="pills-tabContent"
                     style="height: calc(100vh - 126px);">
-                    <div class="tab-pane fade show active h-100 overflow-auto" id="pills-dashboard">
+                    <div class="tab-pane fade h-100 overflow-auto" id="pills-dashboard">
                         <div class="row w-100 pb-4">
                             <div class="col-12 h-100">
                                 <div class="white-card w-100 h-100">
@@ -103,7 +109,8 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <div class="w-100 h-100 position-relative">
-                                                <canvas id="annualLeavesChart" style="max-width: 100%; min-height: 100%;"></canvas>
+                                                <canvas id="annualLeavesChart"
+                                                    style="max-width: 100%; min-height: 100%;"></canvas>
                                             </div>
                                         </div>
                                         <div class="col-6">
@@ -120,7 +127,8 @@
                                 <div class="white-card my-requests h-100">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <h2 class="mb-3">
-                                            <img src="./images/my-requests-heading.png" alt="" class="d-inline-block" width="30" height="34">
+                                            <img src="./images/my-requests-heading.png" alt="" class="d-inline-block"
+                                                width="30" height="34">
                                             طلباتي
                                             <span class="underline"></span>
                                         </h2>
@@ -139,8 +147,8 @@
                                                     <input class="info-input" value="يومان" readonly>
                                                 </div>
                                                 <div class="col">
-                                                        <label>من:</label>
-                                                        <input class="info-input" value="12-3-2023" readonly>
+                                                    <label>من:</label>
+                                                    <input class="info-input" value="12-3-2023" readonly>
                                                 </div>
                                                 <div class="col">
                                                     <label>الى:</label>
@@ -164,8 +172,8 @@
                                                     <input class="info-input" value="يومان" readonly>
                                                 </div>
                                                 <div class="col">
-                                                        <label>من:</label>
-                                                        <input class="info-input" value="12-3-2023" readonly>
+                                                    <label>من:</label>
+                                                    <input class="info-input" value="12-3-2023" readonly>
                                                 </div>
                                                 <div class="col">
                                                     <label>الى:</label>
@@ -179,12 +187,13 @@
                                         </li>
                                     </ul>
                                 </div>
-                    
+
                             </div>
                             <div class="col-6 h-100">
                                 <div class="white-card leave-balance h-100">
                                     <h2 class="mb-3">
-                                        <img src="./images/personal-info-icon.png" alt="" class="d-inline-block" width="30" height="34">
+                                        <img src="./images/personal-info-icon.png" alt="" class="d-inline-block"
+                                            width="30" height="34">
                                         رصيد الإجازات
                                         <span class="underline"></span>
                                     </h2>
@@ -835,6 +844,462 @@
                             </div>
                         </div>
                     </div>
+                    <div class="tab-pane fade h-100 overflow-hidden overflow-auto"
+                        id="pills-offical-holidays" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                        <div class="row w-100 pb-2 h-100 official-holidays">
+                            <div class="col-4 pb-5 h-100">
+                                <div class="row">
+                                    <div class="col-12 mb-3">
+                                        <div class="white-card overflow-hidden overflow-auto ">
+                                            <div class="w-100 p-3 d-flex align-items-center justify-content-center">
+                                                <div class="w-50 position-relative">
+                                                    <canvas id="officialHolidaysChart"
+                                                        style="max-width: 100%;"></canvas>
+                                                </div>
+                                            </div>
+                                            <p class="official-holidays__chart-title pb-2">اجازات رسمية</p>
+                                            <div class="row mb-1 official-holidays__stat-pink align-items-center">
+                                                <div class="col-4">إجازات رسمية</div>
+                                                <div class="col-7">
+                                                    <span class="official-holidays__stat-pink__stat-bar"
+                                                        style="width: 100%;"></span>
+                                                </div>
+                                                <div class="col-1 p-0">
+                                                    2
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 official-holidays__stat-dark-blue align-items-center">
+                                                <div class="col-4">مناسبات دينية</div>
+                                                <div class="col-7 d-flex">
+                                                    <span class="official-holidays__stat-dark-blue__stat-bar"
+                                                        style="width: 100%;"></span>
+                                                </div>
+                                                <div class="col-1 p-0">
+                                                    1
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 official-holidays__stat-light-blue align-items-center">
+                                                <div class="col-4">مناسبات وطنية</div>
+                                                <div class="col-7">
+                                                    <span class="official-holidays__stat-light-blue__stat-bar"
+                                                        style="width: 100%;"></span>
+                                                </div>
+                                                <div class="col-1 p-0">
+                                                    1
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="white-card h-100 overflow-hidden overflow-auto ">
+                                            <h3 class="pb-3">الإجازات الرسمية في الأردن</h3>
+
+                                            <div class="row">
+                                                <div class="col-12 mb-1 official-holidays__pink-checkbox">
+                                                    <input type="checkbox" name="" id="officialHolidays">
+                                                    <label for="officialHolidays"
+                                                        class="d-flex align-items-center gap-2"><span></span>إجازات
+                                                        رسمية</label>
+                                                </div>
+                                                <div class="col-12 mb-1 official-holidays__dark-blue-checkbox">
+                                                    <input type="checkbox" name="" id="religiousEvents">
+                                                    <label for="religiousEvents"
+                                                        class="d-flex align-items-center gap-2"><span></span>مناسبات
+                                                        دينية</label>
+                                                </div>
+                                                <div class="col-12 mb-1 official-holidays__light-blue-checkbox">
+                                                    <input type="checkbox" name="" id="nationalEvents">
+                                                    <label for="nationalEvents"
+                                                        class="d-flex align-items-center gap-2"><span></span>مناسبات
+                                                        وطنية</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-8 pb-5 h-100">
+                                <div class="calendar h-100">
+                                    <div class="row g-0 h-100">
+                                        <div class="col-4">
+                                            <div class="calendar__blue-side py-3 h-100">
+                                                <h3 id="calendarDate">
+                                                    2023,,2مايو 2,الأثن
+                                                </h3>
+                                                <ul>
+                                                    <li>
+                                                        <button>2027 مايو </button>
+                                                    </li>
+                                                    <li>
+                                                        <button>2026 مايو </button>
+                                                    </li>
+                                                    <li>
+                                                        <button>2025 مايو </button>
+                                                    </li>
+                                                    <li>
+                                                        <button>2024 مايو </button>
+                                                    </li>
+                                                    <li class="active">
+                                                        <button>2023 مايو</button>
+                                                    </li>
+                                                    <li>
+                                                        <button>2022 مايو </button>
+                                                    </li>
+                                                    <li>
+                                                        <button>2021 مايو </button>
+                                                    </li>
+                                                    <li>
+                                                        <button>2020 مايو </button>
+                                                    </li>
+                                                    <li>
+                                                        <button>2019 مايو </button>
+                                                    </li>
+                                                </ul>
+                                                <div class="bottom">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="calendar__white-side border-0 p-3 h-100">
+                                                <div class="calendar__white-side__head">
+                                                    <div>أحد</div>
+                                                    <div>اثنين</div>
+                                                    <div>ثلاثاء</div>
+                                                    <div>اربعاء</div>
+                                                    <div>خميس</div>
+                                                    <div>جمعة</div>
+                                                    <div>سبت</div>
+                                                </div>
+                                                <div id="officialHolidaysCalendar" class="calendar__white-side__body">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade h-100 show active overflow-hidden overflow-auto"
+                        id="pills-my-requests" role="tabpanel" aria-labelledby="pills-my-requests" tabindex="0">
+                        <div class="h-100 overflow-hidden overflow-auto">
+                            <ul class="nav nav-pills my-requests-nav-pills m-0 p-0 gap-3" id="my-requests-pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                  <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">الكل</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                  <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">الإجازات</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                  <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">المغادرات</button>
+                                </li>
+                              </ul>
+                              <div class="tab-content h-100 overflow-auto" id="my-requests-pills-tabContent">
+                                <div class="tab-pane fade show active h-100 overflow-auto" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                                    <div class="row mt-2">
+                                        <div class="col-6 my-leaves">
+                                            <div class="white-card overflow-hidden overflow-auto p-0 h-100">
+                                                <ul class="p-3">
+                                                    <li class="py-3">
+                                                        <div class="head d-flex align-items-center justify-content-between mb-2">
+                                                            <h2>
+                                                                <img src="./images/my-requests.png" alt="" class="d-inline-block" width="34" height="26">
+                                                                إجازة
+                                                            </h2>
+                                                            <img src="./images/info.png" alt="" width="17" height="17">
+                                                        </div>
+                                                        <div class="row g-2 w-100">
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="py-3">
+                                                        <div class="head d-flex align-items-center justify-content-between mb-2">
+                                                            <h2>
+                                                                <img src="./images/my-requests.png" alt="" class="d-inline-block" width="34" height="26">
+                                                                إجازة
+                                                            </h2>
+                                                            <img src="./images/info.png" alt="" width="17" height="17">
+                                                        </div>
+                                                        <div class="row g-2 w-100">
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="py-3">
+                                                        <div class="head d-flex align-items-center justify-content-between mb-2">
+                                                            <h2>
+                                                                <img src="./images/my-requests.png" alt="" class="d-inline-block" width="34" height="26">
+                                                                إجازة
+                                                            </h2>
+                                                            <img src="./images/info.png" alt="" width="17" height="17">
+                                                        </div>
+                                                        <div class="row g-2 w-100">
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="py-3">
+                                                        <div class="head d-flex align-items-center justify-content-between mb-2">
+                                                            <h2>
+                                                                <img src="./images/my-requests.png" alt="" class="d-inline-block" width="34" height="26">
+                                                                إجازة
+                                                            </h2>
+                                                            <img src="./images/info.png" alt="" width="17" height="17">
+                                                        </div>
+                                                        <div class="row g-2 w-100">
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="py-3">
+                                                        <div class="head d-flex align-items-center justify-content-between mb-2">
+                                                            <h2>
+                                                                <img src="./images/my-requests.png" alt="" class="d-inline-block" width="34" height="26">
+                                                                إجازة
+                                                            </h2>
+                                                            <img src="./images/info.png" alt="" width="17" height="17">
+                                                        </div>
+                                                        <div class="row g-2 w-100">
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="py-3">
+                                                        <div class="head d-flex align-items-center justify-content-between mb-2">
+                                                            <h2>
+                                                                <img src="./images/my-requests.png" alt="" class="d-inline-block" width="34" height="26">
+                                                                إجازة
+                                                            </h2>
+                                                            <img src="./images/info.png" alt="" width="17" height="17">
+                                                        </div>
+                                                        <div class="row g-2 w-100">
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="py-3">
+                                                        <div class="head d-flex align-items-center justify-content-between mb-2">
+                                                            <h2>
+                                                                <img src="./images/my-requests.png" alt="" class="d-inline-block" width="34" height="26">
+                                                                إجازة
+                                                            </h2>
+                                                            <img src="./images/info.png" alt="" width="17" height="17">
+                                                        </div>
+                                                        <div class="row g-2 w-100">
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="py-3">
+                                                        <div class="head d-flex align-items-center justify-content-between mb-2">
+                                                            <h2>
+                                                                <img src="./images/my-requests.png" alt="" class="d-inline-block" width="34" height="26">
+                                                                إجازة
+                                                            </h2>
+                                                            <img src="./images/info.png" alt="" width="17" height="17">
+                                                        </div>
+                                                        <div class="row g-2 w-100">
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p>المدة</p>
+                                                                <input type="text" name="" id="" value="5 أيام" readonly="">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 h-100">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <div class="white-card h-100   p-0">
+                                                        <div class="row g-0 h-100">
+                                                            <div class="col-4">
+                                                                <div class="calendar__blue-side py-3 h-100">
+                                                                    <h3 id="calendarDate">
+                                                                        2023,,2مايو 2,الأثن
+                                                                    </h3>
+                                                                    <ul>
+                                                                        <li>
+                                                                            <button>2027 مايو </button>
+                                                                        </li>
+                                                                        <li>
+                                                                            <button>2026 مايو </button>
+                                                                        </li>
+                                                                        <li>
+                                                                            <button>2025 مايو </button>
+                                                                        </li>
+                                                                        <li>
+                                                                            <button>2024 مايو </button>
+                                                                        </li>
+                                                                        <li class="active">
+                                                                            <button>2023 مايو</button>
+                                                                        </li>
+                                                                        <li>
+                                                                            <button>2022 مايو </button>
+                                                                        </li>
+                                                                        <li>
+                                                                            <button>2021 مايو </button>
+                                                                        </li>
+                                                                        <li>
+                                                                            <button>2020 مايو </button>
+                                                                        </li>
+                                                                        <li>
+                                                                            <button>2019 مايو </button>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="bottom">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-8">
+                                                                <div class="calendar__white-side border-0 p-3 h-100">
+                                                                    <div class="calendar__white-side__head">
+                                                                        <div>أحد</div>
+                                                                        <div>اثنين</div>
+                                                                        <div>ثلاثاء</div>
+                                                                        <div>اربعاء</div>
+                                                                        <div>خميس</div>
+                                                                        <div>جمعة</div>
+                                                                        <div>سبت</div>
+                                                                    </div>
+                                                                    <div id="myRequestsCalendar" class="calendar__white-side__body">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="white-card">
+                                                        <div class="w-100 position-relative">
+                                                            <canvas id="myRequestsChart"
+                                                                style="max-width: 100%;"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+
+                                </div>
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+
+                                </div>
+                              </div>
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>
@@ -845,7 +1310,7 @@
         const annualLeavesChart = new Chart(annualLeavesCanvas, {
             type: 'bar',
             data: {
-                labels: ['كانون الثاني', 'شباط', 'آذار',  'نيسان', 'أيار', 'حزيران', 'تموز', 'آب', 'أيلول', 'آب', 'أيلول', 'تشرين الأول', 'تشرين الثاني', 'كانون الأول'],
+                labels: ['كانون الثاني', 'شباط', 'آذار', 'نيسان', 'أيار', 'حزيران', 'تموز', 'آب', 'أيلول', 'آب', 'أيلول', 'تشرين الأول', 'تشرين الثاني', 'كانون الأول'],
                 datasets: [{
                     label: 'Annual leave',
                     backgroundColor: '#1DAAE2',
@@ -864,7 +1329,7 @@
             },
             options: {
                 maintainAspectRatio: false,
-                aspectRatio: 1/1,
+                aspectRatio: 1 / 1,
                 plugins: {
                     legend: {
                         display: false,
@@ -872,41 +1337,41 @@
                 },
                 indexAxis: 'x',
                 scales: {
-                x: {
-                    stacked: true,
-                    ticks: {
-                        color: 'black',
-                        font: {
-                            size: 7,
-                            family: 'Droid Arabic Kufi'
-                        }
-                    },
-                    reverse: true,
-                },
-                y: {
-                    title: {
-                        display: true,
-                        text: 'يوم',
-                        color: '#1DAAE2',
-                        align: 'start',
-                        font: {
-                            family: 'Droid Arabic Kufi',
-                            color: '#1DAAE2' // specify the color property inside font
-                        }
-                    },
-                    position: 'right',
-                    stacked: true,
-                    ticks: {
-                        autoSkip: false,
-                        min: 0,
-                        max: 30,
-                        stepSize: 3,
-                        callback: function (value, index, values) {
-                            return value;
+                    x: {
+                        stacked: true,
+                        ticks: {
+                            color: 'black',
+                            font: {
+                                size: 7,
+                                family: 'Droid Arabic Kufi'
+                            }
                         },
+                        reverse: true,
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'يوم',
+                            color: '#1DAAE2',
+                            align: 'start',
+                            font: {
+                                family: 'Droid Arabic Kufi',
+                                color: '#1DAAE2' // specify the color property inside font
+                            }
+                        },
+                        position: 'right',
+                        stacked: true,
+                        ticks: {
+                            autoSkip: false,
+                            min: 0,
+                            max: 30,
+                            stepSize: 3,
+                            callback: function (value, index, values) {
+                                return value;
+                            },
+                        }
                     }
-                }
-            },
+                },
             }
         });
 
@@ -915,7 +1380,7 @@
         const workLeavesChart = new Chart(wrokLeavesCanvas, {
             type: 'bar',
             data: {
-                labels: ['كانون الثاني', 'شباط', 'آذار',  'نيسان', 'أيار', 'حزيران', 'تموز', 'آب', 'أيلول', 'آب', 'أيلول', 'تشرين الأول', 'تشرين الثاني', 'كانون الأول'],
+                labels: ['كانون الثاني', 'شباط', 'آذار', 'نيسان', 'أيار', 'حزيران', 'تموز', 'آب', 'أيلول', 'آب', 'أيلول', 'تشرين الأول', 'تشرين الثاني', 'كانون الأول'],
                 datasets: [{
                     label: 'Annual leave',
                     borderRadius: 5,
@@ -925,7 +1390,7 @@
             },
             options: {
                 maintainAspectRatio: false,
-                aspectRatio: 1/1,
+                aspectRatio: 1 / 1,
                 plugins: {
                     legend: {
                         display: false,
@@ -933,91 +1398,195 @@
                 },
                 indexAxis: 'x',
                 scales: {
-                x: {
-                    ticks: {
-                        color: 'black',
-                        font: {
-                            size: 7,
-                            family: 'Droid Arabic Kufi',
-                        }
-                    },
-                    reverse: true,
-                },
-                y: {
-                    title: {
-                        display: true,
-                        color: '#1DAAE2',
-                        text: 'ساعة',
-                        align: 'start',
-                        font: {
-                            family: 'Droid Arabic Kufi',
-                            color: '#1DAAE2' // specify the color property inside font
-                        }
-                    },
-                    position: 'right',
-                    ticks: {
-                        autoSkip: false,
-                        min: 0,
-                        max: 10,
-                        stepSize: 1,
-                        callback: function (value, index, values) {
-                            return value;
+                    x: {
+                        ticks: {
+                            color: 'black',
+                            font: {
+                                size: 7,
+                                family: 'Droid Arabic Kufi',
+                            }
                         },
+                        reverse: true,
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            color: '#1DAAE2',
+                            text: 'ساعة',
+                            align: 'start',
+                            font: {
+                                family: 'Droid Arabic Kufi',
+                                color: '#1DAAE2' // specify the color property inside font
+                            }
+                        },
+                        position: 'right',
+                        ticks: {
+                            autoSkip: false,
+                            min: 0,
+                            max: 10,
+                            stepSize: 1,
+                            callback: function (value, index, values) {
+                                return value;
+                            },
+                        }
                     }
-                }
-            },
+                },
             }
         });
+
+        const officialHolidaysCanvas = document.getElementById('officialHolidaysChart').getContext('2d');
+        const officialHolidaysChart = new Chart(officialHolidaysCanvas, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    label: 'My First Dataset',
+                    data: [1, 1, 2],
+                    backgroundColor: [
+                        '#1DAAE2',
+                        '#1d2244',
+                        '#c945c9'
+                    ],
+                    hoverOffset: 1,
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+
+                },
+                cutout: '90%'
+            },
+            plugins: [
+                {
+                    id: 'doughnutLabel',
+                    beforeDatasetsDraw(chart, args, pluginOptions) {
+                        const { ctx, data } = chart;
+                        ctx.save();
+                        const xCoor = chart.getDatasetMeta(0).data[0].x;
+                        const yCoor = chart.getDatasetMeta(0).data[0].y + (chart.getDatasetMeta(0).data[0].y / 4);
+                        ctx.font = "bold 100px 'Droid Arabic Kufi', 'Arial";
+                        ctx.fillStyle = '#1995C7';
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+                        ctx.fillText('5', xCoor, yCoor);
+                    }
+                }
+            ]
+        });
+
+        const myRequestsCanvas =  document.getElementById('myRequestsChart');
+        const myRequestsChart = new Chart(myRequestsCanvas, {
+            type: 'bar',
+            data: {
+                labels: ['كانون الثاني', 'شباط', 'آذار', 'نيسان', 'أيار', 'حزيران', 'تموز', 'آب', 'أيلول', 'آب', 'أيلول', 'تشرين الأول', 'تشرين الثاني', 'كانون الأول'],
+                datasets: [{
+                    label: 'Annual leave',
+                    borderRadius: 5,
+                    backgroundColor: [
+                        'rgba(163, 65, 164, 0.2)',
+                        'rgba(163, 65, 164, 0.2)',
+                        'rgba(163, 65, 164, 0.2)',
+                        'rgba(163, 65, 164, 0.2)',
+                        'rgba(163, 65, 164, 0.2)', 
+                        'rgba(65, 164, 91, 1)'
+                    ],
+                    data: [10, 8, 6, 2, 2, 5]
+                }],
+            },
+            options: {
+                maintainAspectRatio: false,
+                aspectRatio: 1 / 1,
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                },
+                indexAxis: 'x',
+                scales: {
+                    x: {
+                        ticks: {
+                            color: 'black',
+                            font: {
+                                size: 7,
+                                family: 'Droid Arabic Kufi',
+                            }
+                        },
+                        reverse: true,
+                    },
+                    y: {                    
+                        position: 'right',
+                        ticks: {
+                            autoSkip: false,
+                            min: 0,
+                            max: 10,
+                            stepSize: 1,
+                            callback: function (value, index, values) {
+                                return value;
+                            },
+                        }
+                    }
+                },
+            }
+        })
+
 
 
 
         let leavesCalendar = document.getElementById('leavesCalendar');
-let vacationsCalendar = document.getElementById('vacationsCalendar');
-const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        let vacationsCalendar = document.getElementById('vacationsCalendar');
+        let officialHolidaysCalendar = document.getElementById('officialHolidaysCalendar');
+        let myRequestsCalendar = document.getElementById('myRequestsCalendar');
+        const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-function load() {
-    const dt = new Date();
-    const day = dt.getDate();
-    const month = dt.getMonth();
-    const year = dt.getFullYear();
+        function load() {
+            const dt = new Date();
+            const day = dt.getDate();
+            const month = dt.getMonth();
+            const year = dt.getFullYear();
 
-    const firstDayOfMonth = new Date(year, month, 1);
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const firstDayOfMonth = new Date(year, month, 1);
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-    const dateString = firstDayOfMonth.toLocaleString('en-us', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric',
-    });
+            const dateString = firstDayOfMonth.toLocaleString('en-us', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric',
+            });
 
-    arabicCurrentDateString = dt.toLocaleString('ar-us', {
-        weekday: 'long',
-        year: '2-digit',
-        month: 'long',
-        day: '2-digit',
-    });
-    calendarDate.innerText = arabicCurrentDateString;
+            arabicCurrentDateString = dt.toLocaleString('ar-us', {
+                weekday: 'long',
+                year: '2-digit',
+                month: 'long',
+                day: '2-digit',
+            });
+            calendarDate.innerText = arabicCurrentDateString;
 
-    const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
+            const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
 
-    for (let i = 1; i <= paddingDays + daysInMonth; i++) {
-        let daySquare = document.createElement("button");
-        daySquare.classList.add('day');
+            for (let i = 1; i <= paddingDays + daysInMonth; i++) {
+                let daySquare = document.createElement("button");
+                daySquare.classList.add('day');
 
-        if (i > paddingDays) {
-            daySquare.innerText = i - paddingDays;
-            daySquare.addEventListener('click', () => console.log('clicked'));
-        } else {
-            daySquare.setAttribute('disabled', true);
+                if (i > paddingDays) {
+                    daySquare.innerText = i - paddingDays;
+                    daySquare.addEventListener('click', () => console.log('clicked'));
+                } else {
+                    daySquare.setAttribute('disabled', true);
+                }
+                // Append to respective calendars
+                leavesCalendar.appendChild(daySquare.cloneNode(true));
+                vacationsCalendar.appendChild(daySquare.cloneNode(true));
+                officialHolidaysCalendar.appendChild(daySquare.cloneNode(true));
+                myRequestsCalendar.appendChild(daySquare.cloneNode(true));
+            }
         }
-        // Append to respective calendars
-        leavesCalendar.appendChild(daySquare.cloneNode(true));
-        vacationsCalendar.appendChild(daySquare.cloneNode(true));
-    }
-}
 
-load();
+        load();
 
     </script>
     <script type="module" src="/main.js"></script>

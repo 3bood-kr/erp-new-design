@@ -71,7 +71,7 @@
                                 الحضور الأسبوعي
                                 <span class="underline"></span>
                             </h2>
-                            <div class="in-out-chart h-100 w-100 position-relative">
+                            <div class="h-100 w-100 position-relative">
                                 <canvas id="weeklyAttendaceChart" style="max-width: 100%"></canvas>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="row mb-4 w-100">
                     <div class="col-12 d-flex h-100">
-                        <div class="white-card h-100 w-100">
+                        <div class="white-card attendace-report h-100 w-100">
                             <div class="d-flex align-items-center justify-content-between">
                                 <h2>
                                     <img src="./images/weekly-attendace.png" alt="" class="d-inline-block" width="30"
@@ -87,12 +87,56 @@
                                     تقرير الحضور
                                     <span class="underline"></span>
                                 </h2>
-                                <div>
-                                    lll
+                                <div class="d-flex gap-4 attendace-report__date-filter">
+                                    <div class="d-flex gap-2">
+                                        <label class="d-inline" for="">من:</label>
+                                        <input type="date" id="date-checkout" class="info-input">
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <label class="d-inline" for="">الى:</label>
+                                        <input type="date" id="date-checkout" class="info-input">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="in-out-chart h-100 w-100 position-relative">
-                                <canvas id="weeklyAttendaceChart" style="max-width: 100%"></canvas>
+                            <div class="h-100 w-100">
+                                <table class="w-100">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>اسم الموظف</th>
+                                            <th>التاريخ</th>
+                                            <th>اليوم</th>
+                                            <th>الحالة</th>
+                                            <th>بداية  <br> الدوام</th>
+                                            <th>نهاية الدوام</th>
+                                            <th>تسجيل دخول</th>
+                                            <th>تسجيل خروج</th>
+                                            <th>عدم وجود بصمة</th>
+                                            <th>تأخير</th>
+                                            <th>الخروج قبل نهاية الدوام</th>
+                                            <th>العمل الإضافي</th>
+                                            <th>نوع الإجازة</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#</td>
+                                            <td>اسم الموظف</td>
+                                            <td>التاريخ</td>
+                                            <td>اليوم</td>
+                                            <td>الحالة</td>
+                                            <td>بداية  <br> الدوام</td>
+                                            <td>نهاية الدوام</td>
+                                            <td>تسجيل دخول</td>
+                                            <td>تسجيل خروج</td>
+                                            <td>عدم وجود بصمة</td>
+                                            <td>تأخير</td>
+                                            <td>الخروج قبل نهاية الدوام</td>
+                                            <td>العمل الإضافي</td>
+                                            <td>نوع الإجازة</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

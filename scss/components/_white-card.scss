@@ -206,7 +206,7 @@
 .leaves_page{
     height: calc(100vh - 86px);
 
-    .nav-pills{
+    .vacations-nav-pills{
         padding: 0;
         margin: 0 !important;
         .nav-item{
@@ -233,6 +233,21 @@
                 transition: transform 0.15s ease-in-out;
             }
         }
+    }
+
+    .my-requests-nav-pills{
+        .nav-link{
+            background-color: transparent;
+            border: 1px solid var(--c-pink);
+            color: var(--c-pink);
+
+            &.active{
+                background-color: var(--c-pink);
+                color: #fff;
+            }
+            
+        }
+
     }
 
     .my-leaves{
@@ -269,7 +284,6 @@
             }
             
             &::-webkit-scrollbar-track {
-                -webkit-box-shadow: inset 0 0 0 red;
                 border-radius: 10px;
                 background-color: transparent;
             }
@@ -375,4 +389,146 @@
         }
     }
 
+}
+
+.attendace-report{
+    &__date-filter{
+        color: var(--c-light-blue);
+    }
+
+    table {
+        $border: 1px solid var(--c-light-blue);
+        border-collapse: separate;
+        border-spacing: 0;
+        min-width: 350px;
+        text-align: center;
+
+        tr{
+
+            &:first-child{
+                th{
+                    &:first-child{
+                        border-start-start-radius: 6px;
+                    }
+                    &:last-child{
+                        border-start-end-radius: 6px;
+                    }
+                }
+            }
+            &:last-child{
+                td{
+                    &:first-child{
+                        border-end-start-radius: 6px;
+                    }
+                    &:last-child{
+                        border-end-end-radius: 6px;
+                    }
+                }
+            }
+
+            th{
+                border-top: $border;
+            }
+            th, td{
+                &:first-child{
+                    border-inline-start: $border;
+                }
+                &:last-child{
+                    border-inline-end: $border;
+                }
+                border-inline-end: $border;
+                border-bottom: $border;
+                padding: 5px;
+            }
+        }
+      }  
+}
+
+.official-holidays{
+    &__chart-title{
+        text-align: center;
+        font-size: u.rem(30);
+        color: var(--c-light-blue);
+
+    }
+
+    white-space: nowrap;
+    span{
+        display: block;
+        height: u.rem(15);
+        border-radius: u.rem(5);
+    }
+
+    &__stat-pink{
+        color: var(--c-pink);
+        &__stat-bar{
+            background-color: var(--c-pink);
+        }
+    }
+    &__stat-dark-blue{
+        color: var(--c-dark-blue);
+        &__stat-bar{
+            background-color: var(--c-dark-blue);
+        }
+    }
+    &__stat-light-blue{
+        color: var(--c-light-blue);
+        &__stat-bar{
+            background-color: var(--c-light-blue);
+        }
+    }
+
+    input[type="checkbox"] {
+        display: none;
+        + label{
+            cursor: pointer;
+            span{
+                display: inline-block;
+                width: u.rem(18);
+                height: u.rem(18);
+                border: 1px solid;
+                border-radius: 5px;
+            }
+        }
+        &:checked + label span {
+            background-image: url('data:image/svg+xml,<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.05322 6.38098L5.01807 11.1232L12.9482 0.605591" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__pink-checkbox{
+        color: var(--c-pink);
+        input[type="checkbox"]{
+            + label span{
+                border-color: var(--c-pink);
+            }
+            &:checked + label span {
+                background-color: var(--c-pink);
+            }
+        }
+    }
+    &__dark-blue-checkbox{
+        color: var(--c-dark-blue);
+        input[type="checkbox"]{
+            + label span{
+                border-color: var(--c-dark-blue);
+            }
+            &:checked + label span {
+                background-color: var(--c-dark-blue);
+            }
+        }
+    }
+    &__light-blue-checkbox{
+        color: var(--c-light-blue);
+        input[type="checkbox"]{
+            + label span{
+                border-color: var(--c-light-blue);
+            }
+            &:checked + label span {
+                background-color: var(--c-light-blue);
+            }
+        }
+    }
+    
 }

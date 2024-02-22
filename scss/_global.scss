@@ -23,6 +23,7 @@ html{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scrollbar-gutter: stable;
 }
 
 *, *::before, *::after{

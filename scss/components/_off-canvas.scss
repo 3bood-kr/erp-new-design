@@ -16,7 +16,8 @@
         padding: 0;
         li{
             list-style: none;
-            padding-block: u.rem(20) u.rem(10);
+            padding-block: u.rem(12);
+            white-space: nowrap;
             border-bottom: 1.5px solid #fff;
             &:last-of-type{
                 border-bottom: none;
